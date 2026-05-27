@@ -1725,7 +1725,7 @@ impl Renderable for ChatComposerRightReserveRenderable<'_> {
     }
 }
 
-#[cfg(not(target_os = "linux"))]
+#[cfg(not(any(target_os = "linux", target_os = "android")))]
 impl BottomPane {
     pub(crate) fn insert_recording_meter_placeholder(&mut self, text: &str) -> String {
         let id = self.composer.insert_recording_meter_placeholder(text);
